@@ -1,0 +1,966 @@
+*{
+    margin:0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: rgb(18, 95, 109);
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    text-align: center;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    letter-spacing: 2px;
+    font-weight: 300;
+  }
+ 
+.topnav a {
+    /* float: left; */
+    display: inline-block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 20px;
+    width:15%;
+    text-decoration: none;
+  }
+.topnav a:hover {
+    background-color: rgb(116, 170, 196);
+    color: black;
+  }
+
+#home{
+    background-color: rgb(116, 170, 196);
+    color: black;
+}
+/* Part 1-Piha Advertisement------------------------------------------------------------- */
+
+#Ad1_Container{
+    position: relative;
+    width:100%;
+    height: 280px;
+    background:linear-gradient(60deg, #3d3393 0%, #2b76b9 37%, #2cacd1 65%, #35eb93 100%);
+    overflow: hidden;
+    animation: changeBackground 5s linear 1;
+    animation-delay: 17s;
+    animation-fill-mode: forwards;   
+}
+
+#Ad1_Container .wave{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width: 100%;
+    height: 80px;
+    /* ref: custom-made */
+    background-image: url(images/wave.png);
+    background-size: 100% 100px;
+}
+.wave.wave1{
+    animation: wavy 30s linear infinite;
+    z-index: 3;
+    opacity: 1;
+    bottom:0;
+}
+.wave.wave2{
+    animation: wavy2 15s linear infinite;
+    z-index: 2;
+    opacity: 0.6;
+    animation-delay: -5s;
+    bottom:10px;
+}
+.wave.wave3{
+    animation: wavy 10s linear infinite;
+    z-index: 1;
+    opacity: 0.4;
+    animation-delay: -2s;
+    bottom:15px;
+}
+@keyframes wavy {
+    0%{
+        background-position-x: 0px;
+    }
+    100%{
+        background-position-x: 1000px;
+    }  
+}
+
+@keyframes wavy2 {
+    0%{
+        background-position-x: 0px;
+    }
+    100%{
+        background-position-x: -1000px;
+    }
+}
+
+
+@keyframes changeBackground {
+    0%{
+        background: linear-gradient(60deg, #fa709a 0%, #fee140 100%);
+        opacity: 0.8;
+
+    }
+    100%{
+        background: linear-gradient(60deg, #fa709a 0%, #fee140 100%);
+        opacity: 1;
+    }
+    
+}
+
+
+.heading{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    font-weight: 900;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(239, 250, 255);
+    animation: animateHeading 4s linear 2;
+    animation-delay: 1s;
+    z-index: 7;   
+    animation-fill-mode: forwards; 
+    visibility: hidden;  
+}
+
+.heading h1:after{
+    content:'PIHA';
+    animation: changeText 3s linear infinite;
+    animation-delay: 20s;
+    animation-fill-mode: forwards;
+
+}
+
+@keyframes animateHeading {
+    0%{ 
+        color:rgb(19, 84, 114);
+        letter-spacing: 10px;
+        font-size: 10px;
+        visibility: visible; 
+    }
+    50%{ 
+        letter-spacing: 20px;
+        font-size: 30px; 
+        visibility: visible;    
+    }
+    100%
+    {
+        letter-spacing: 10px;
+        font-size: 60px;
+        visibility: visible; 
+    }
+}
+
+
+
+@keyframes changeText {
+    0%{
+        margin-left: -110%;
+        content:'SCENIC';
+        opacity: 0;
+        visibility: visible; 
+    }
+    50%{
+        visibility: visible; 
+    }
+    100%{
+        text-align: left;
+        margin-left: -110%;
+        content: 'PIHA';
+        visibility: visible; 
+    }
+}
+
+.surfing{
+    
+    animation: moveSurf 4s linear 1;
+    animation-delay: 5s;
+    animation-fill-mode: forwards;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: 4;
+}
+
+@keyframes moveSurf{
+    
+    0% {
+        transform: translate(-10%, 50px);
+        visibility: visible; 
+        opacity: 0.8;
+      }
+    100% {
+
+        transform: translate(100%, -160px);
+        visibility: visible; 
+        opacity: 0;
+      }
+}
+
+.kiteBoarding{
+    animation: moveKiteBoarding 5s linear 1;
+    animation-delay: 9s;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: 5;
+    position: absolute;
+    animation-fill-mode: forwards;
+    top:20px;
+    right: 0;
+
+}
+
+@keyframes moveKiteBoarding{
+    
+    0% {
+       
+        right:0%;
+        opacity: 1;
+        visibility: visible; 
+      }
+
+    50% {
+        
+
+        right:50%;
+        opacity: 0.8;
+        visibility: visible; 
+      }
+
+    100% {
+ 
+        right: 80%;
+        opacity: 0.5;
+        visibility: visible; 
+
+      }
+}
+
+.subText{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-family: Georgia;
+    color: cornsilk;
+    animation: animateSubtext 5s 12s linear 1,
+    animateSubtext2 3s 21s linear 1;
+    visibility: hidden;
+    z-index: 6;
+    position: absolute;
+    animation-fill-mode: forwards;
+    top:60%;
+    bottom:40%;
+
+}
+
+@keyframes animateSubtext {
+    0% {
+        
+        left:40%;
+        right:-40%;
+        font-size: 5px;
+        visibility: visible; 
+      }
+    20% {
+ 
+        left:20%;
+        right:-20%;
+        font-size: 10px;
+        visibility: visible; 
+      }
+    80% {
+
+        left:10%;
+        right:-10%;
+        font-size: 15px;
+        color: rgb(63, 225, 247);
+        visibility: visible; 
+      }
+
+    100% {
+
+        left:0%;
+        right: 0%;
+        font-size: 20px;
+        color: cornsilk;
+        visibility: visible; 
+
+      }
+    
+}
+
+@keyframes animateSubtext2 {
+    0%{
+        left:0%;
+        right: 0%; 
+       
+    }
+    100%{
+        left:5%;
+        right:40%;
+        font-size: 15px;
+    }
+    
+    
+}
+.imageContainer{
+    width: 300px;
+    height: 250px;
+    overflow: hidden;
+    visibility:hidden;
+    animation: animateContainer 3s 25s linear 1,
+    animateSlider 5s 3s infinite alternate;
+    animation-fill-mode: forwards;
+    z-index:8;
+    position: absolute;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover
+    
+}
+
+@keyframes animateContainer {
+    0%{
+        right:5%;
+        top:-20%;
+        visibility: visible;
+    }
+    100%{
+        right:5%;
+        top:5%;
+        visibility: visible;
+    }
+    
+}
+
+@keyframes animateSlider {
+    /* ref: https://unsplash.com/photos/L-mvjXO1WAM */
+    0%{background-image: url(images/piha1.jpg);}
+    /* ref: https://unsplash.com/photos/PDS6cudXg7c */
+    50%{background-image: url(images/piha2.jpg);}
+    /* ref: https://unsplash.com/photos/AQRO-2Q8FZ8 */
+    100%{background-image: url(images/piha3.jpg);}
+}
+
+
+.studentBanner{
+    width:100%;
+    height: 280px;
+    overflow: hidden;
+    visibility:hidden;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(60deg, #fa709a 0%, #fee140 100%);
+    animation: animateBanner 8s linear 1;
+    animation-delay: 30s;
+    z-index: 11;
+    animation-fill-mode: forwards;
+    top:0;
+    bottom:0;
+}
+
+
+@keyframes animateBanner {
+    0%{
+        opacity: 0.8;
+        left:-100%;
+        visibility: visible;
+    }
+   
+    100%{
+        left:0;
+        right:0;
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+#Sname{
+    position: absolute;
+    left:45%;
+    top: 35%;
+    text-align: left;
+    font-weight: bold;
+    color:bisque;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    animation: animateName 5s linear infinite;
+    animation-delay:39s;
+    animation-fill-mode: forwards;
+
+}
+@keyframes animateName {
+    0%{
+        font-size:30px;
+    }
+    50%{
+        font-size:40px;
+        color:rgb(18, 95, 109);
+    }
+    100%{
+        font-size:30px;
+    }
+    
+}
+
+#reload{
+    position: absolute;
+    animation: animateReload 3s linear 1;
+    animation-delay: 43s;
+    z-index: 11;
+    animation-fill-mode: forwards;
+    visibility:hidden;
+    left:47%;
+    right:47%;
+
+}
+
+@keyframes animateReload {
+    0%{
+        
+        bottom:-20%;
+        visibility: visible;
+    }
+   
+    100%{
+
+        bottom: 5%;
+        visibility: visible;
+    }
+    
+}
+
+
+/* Part3-Booking System --------------------------------------------------------- */
+#Container2{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: rgba(185, 184, 184, 0.5);
+}
+
+#progress {
+    margin: 20px;
+    width: 800px;
+    height: 20px;
+    margin-left: auto;
+    margin-right:auto;
+    background-color: rgb(226, 224, 224);
+    border-radius: 15px;
+}
+#progressBar {
+    height: 20px;
+    background-color: rgb(18, 95, 109);
+    color: rgb(226, 224, 224);
+    font-weight: bold;
+    text-align: center;
+    border-radius: 15px;
+    width: 0%;
+}
+#tHeading{
+    margin-top:30px;
+    text-align: center;
+    color: rgb(18, 95, 109);
+}
+#formContainer{
+    margin: 30px;
+    position: relative;
+    width:80%;
+    height: 600px;
+    border-radius: 15px;
+    background-color: #5688888f;
+}
+
+table,tr, #left, #right, #des{
+    font-size: 20px;
+    padding-top: 10px;
+    margin: 10px 0;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#left, #sRow{
+    border-bottom: 1px solid grey;
+}
+#sumTable{
+    width:98%;
+}
+#oneRow{
+    padding:10px;
+    text-align: left;
+    width: 100%;
+}
+#sum1{
+    float:left;
+    width:43%;
+    height: 450px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin:30px;
+    
+}
+#sum2{
+    float:right;
+    width:43%;
+    height: 450px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin:30px;
+}
+
+label {
+    padding:10px;
+    display: inline-block;
+  }
+
+input[type=date], input[type=number], select, input[type=text],input[type=email]{
+    padding: 10px;
+    width: 300px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type=range]{
+    width:270px;
+}
+
+.next{
+    background-color: rgb(18, 95, 109);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    position:absolute;
+    bottom: 15px;
+    right:30px;
+}
+.prev{
+    background-color:rgb(18, 95, 109);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    position:absolute;
+    bottom: 15px;
+    left:30px;
+}
+
+#confirmation{
+    /* margin: 30px; */
+    position: relative;
+    width:100%;
+    height: 600px;
+    display:none;
+    /* background-color: #c7d4e0; */
+    background-image: url(images/thankyou.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Homepage---------------------------------------------------------------- */
+#Homepage{
+    margin: 30px;
+    position: relative;
+    width:80%;
+    height: 600px;
+    display:block;
+    /* background-color: #2b76b9; */
+    
+}
+.slide{
+    width: 40%;
+    height: 400px;
+    overflow: hidden;
+    position: absolute;
+    border: 2px solid white;
+    top:60px;
+    bottom:40px;
+    left:30px;
+    animation: animateSlider 10s linear infinite;
+    animation-fill-mode: forwards;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover
+}
+
+.TextContent{
+    width: 50%;
+    height: 100%;
+    margin-top: 40px;
+    position:absolute;
+    right: 0;
+    overflow: hidden;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+    text-align: left;
+}
+
+
+/* Part2-Style ----------------------------------------------------------*/
+#Container3{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 400px;
+}
+
+#Ad2_Container{
+    margin:30px;
+    position: relative;
+    width: 750px;
+    height: 250px;
+    background-image: url(images/bw.jpg);
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    border: 2px solid black;
+}
+
+@keyframes moveContainer {
+    0%{
+        right:0%;
+        visibility:visible;
+    }
+    40%{
+        right:100%;
+        visibility:visible;
+    }
+    50%{
+        right:100%;
+        visibility:visible;
+    }
+    60%{
+        right:100%;
+        visibility:visible;
+    }
+    100%{
+        right:0%;
+        visibility:visible;
+    }
+}
+
+#info{
+    top:1px;
+    right:1px;
+    position: absolute;
+    z-index: 20;
+}
+.Text{
+    position: absolute;
+    display: flex;
+    text-align: center;
+    float:right;
+    font-size: 30px;
+    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: rgb(111, 185, 235);
+    visibility: hidden;
+    left:55%;
+}
+.Text.Text1{
+    top:40px;
+    animation: animateLeft 1s linear 1;
+    animation-delay: 8s;
+    animation-fill-mode: forwards;
+    z-index: 7;
+}
+
+.Text.Text2{
+    top:100px;
+    animation: animateLeft 1s linear 1;
+    animation-delay: 9s;
+    animation-fill-mode: forwards;
+    z-index: 6;
+}
+
+@keyframes animateLeft {
+    0% { 
+        transform: translateX(100%);
+        visibility: visible; 
+        opacity:0;
+    } 
+
+    50% { 
+        transform: translateX(50%); 
+        visibility: visible;
+        opacity:0;
+    }
+ 
+    100% { 
+        transform: translateX(0%); 
+        visibility: visible;
+        opacity:1;
+    } 
+}
+
+.LearnMoreButton{
+    position: absolute;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    top: 170px;
+    left:55%;
+    text-decoration: none;
+    background-color: rgb(111, 185, 235);
+    color: rgb(0, 0, 0);
+    border-radius: 15px;
+    padding: 5px 20px;
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+    animation: animateLeft 1s 10s linear 1,
+    Wobble 1s 12s linear 1;
+    animation-fill-mode: forwards;
+    visibility: hidden;
+    z-index: 5;
+}
+
+@keyframes Wobble {
+    0% { 
+        transform: translateX(0%);
+        visibility: visible; 
+    } 
+
+    20% { 
+        transform: translateX(-10%);
+        visibility: visible;
+    } 
+
+    40% { 
+        transform: translateX(10%); 
+        visibility: visible;
+    }
+    60% { 
+        transform: translateX(-10%);
+        visibility: visible;
+    } 
+ 
+    100% { 
+        transform: translateX(0%); 
+        visibility: visible;
+    } 
+    
+}
+
+.carContainer{
+    background-size: auto;
+    position: absolute;
+    justify-content: center;
+    left:0;
+    right:0;
+    bottom:5%;
+    width:100%;
+    height:300px;
+    animation: moveCarContainer 2s linear 1;
+    animation-delay: 6s;
+    animation-fill-mode: forwards;
+    overflow:visible;
+    visibility: hidden;
+}
+
+@keyframes moveCarContainer {
+    0%{
+        left:-100%;
+        right:100%;
+        visibility: visible;
+
+    }
+    100%{
+        left:10%;
+        right:0;
+        margin-left: auto;
+        margin-right: auto;
+        visibility: visible;
+    }
+    
+}
+
+.rim1 {
+    position: absolute;
+    left: 231px;
+    bottom:11px;
+    z-index: 2;
+    transform:rotateY(-33deg) skewX(-7deg);
+    -webkit-transform: scale(0.3) rotateY(-33deg) skewX(-7deg);
+    -moz-transform: scale(0.3) rotateY(-33deg) skewX(-7deg);
+    animation: rotateAnimation 1s linear 2;
+    animation-delay: 6s;
+    animation-fill-mode: forwards;
+}
+ 
+.rim2 {
+    
+    position: absolute;
+    left: 53px;
+    bottom: 0px;
+    z-index: 3;
+    animation: rotateAnimation 1s linear 2;
+    animation-delay: 6s;
+    animation-fill-mode: forwards;
+
+}
+
+@keyframes rotateAnimation {
+    0%{
+        transform:scale(0.3) rotate(0deg);
+        -webkit-transform:scale(0.3) rotate(0deg); ;
+        -moz-transform: scale(0.3) rotate(0deg);
+    }
+    20%{
+        transform:scale(0.3) rotate(360deg);
+        -webkit-transform:scale(0.3) rotate(360deg); ;
+        -moz-transform: scale(0.3) rotate(360deg);
+    }
+    40%{
+        transform:scale(0.3) rotate(-360deg);
+        -webkit-transform:scale(0.3) rotate(-360deg);
+        -moz-transform: scale(0.3) rotate(-360deg);
+    }
+    60%{
+        transform:scale(0.3) rotate(360deg);
+        -webkit-transform:scale(0.3) rotate(360deg); ;
+        -moz-transform: scale(0.3) rotate(360deg);
+    }
+    80%{
+        transform:scale(0.3) rotate(-360deg);
+        -webkit-transform:scale(0.3) rotate(-360deg); ;
+        -moz-transform: scale(0.3) rotate(-360deg);
+    }
+    100%{
+        transform:scale(0.3) rotate(360deg);
+        -webkit-transform:scale(0.3) rotate(360deg) ;
+        -moz-transform: scale(0.3) rotate(360deg);
+    }
+}
+#car{
+    position: absolute;
+    left:10px;
+    bottom:10px;
+    z-index: 1;
+}
+.studentContainer{
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+    visibility:hidden;
+    display: flex;
+    align-items: center;
+    /* ref: custom-made */
+    background-image: url(images/student.png) ;
+    background-position: center;
+    background-size: cover;
+    background-color: rgb(255, 255, 255);
+    z-index: 13;
+    animation: animateSContainer 5s linear 1;
+    animation-fill-mode: backwards;
+}
+
+#Sname2{
+    position: absolute;
+    left:40%;
+    top:35%;
+    display: flex;
+    text-align: left;
+    color:rgb(23, 39, 61);
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    animation:Wobble 3s linear 1;
+    animation-delay: 2s;
+}
+
+@keyframes animateSContainer {
+    0%{
+        top:-100%;
+        visibility:visible;
+    }
+    40%{
+        top:0%;
+        visibility:visible;
+    }
+    50%{
+        top:0%;
+        visibility:visible;
+    }
+    60%{
+        top:0%;
+        visibility:visible;
+    }
+    80%{
+        top:0%;
+        visibility:visible;
+    }
+    100%{
+        top:-100%;
+        visibility:visible;
+    }
+
+
+    
+}
+
+.replay{
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    position: absolute;
+    top:0;
+    left:0;
+    background-color: rgb(74, 81, 83,0.5);
+    z-index: 10;
+    visibility: hidden;
+    animation: animateReplay 1s linear 1;
+    animation-delay: 15s;
+    animation-fill-mode: forwards;
+}
+
+#replayIcon{
+    position: absolute;
+    bottom: 45%;
+    left: 45%;
+    right: 45%;
+    z-index: 12;
+    opacity: 1;
+
+}
+
+@keyframes animateReplay {
+    0%{
+        visibility:visible;
+        opacity: 0;
+    }
+    100%{
+        visibility:visible;
+        opacity: 1;
+    }
+}
+
+
+
+
+
+@media screen and (max-width: 700px) {
+    .Ad2_Container, #formContainer {   
+        width: 100%;
+        padding: 0;
+    }
+  }

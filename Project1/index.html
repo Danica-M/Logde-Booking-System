@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <title>Piha Beach Homestay</title>
+        <link rel="stylesheet" href="index_style.css"> 
+        <script src="index_script.js"></script>
+    </header>
+    <body>
+        
+        <section id="Container1">
+            <div id="Ad1_Container">
+                <a href="http://www.piha.co.nz/" target="_blank">
+                    <div class="wave wave1"></div>
+                    <div class="wave wave2"></div>
+                    <div class="wave wave3"></div>
+                    <div class="heading"><h1></h1></div>
+                    <div class="subText">
+                        <h2> A black-sand beach on the rugged coast of the West Auckland.<br>
+                        Popular for its strong water, perfect for surfing. </h2> 
+                    </div>
+                    <!-- ref:https://www.seekpng.com/ipng/u2q8u2a9o0r5a9o0_surfing-transparent-png-surfing-word-art/ -->
+                    <div class="surfing"><img src="images/surf.png" alt="surf"/></div>
+                    <!-- ref:https://www.cleanpng.com/png-bumper-sticker-power-kite-kitesurfing-appliqu-ki-3467380/ -->
+                    <div class="kiteBoarding"><img src="images/kiteboarder.png" alt="kiteboarding"/></div>
+                    <div class="imageContainer"> </div>
+                    <div class="studentBanner">
+                        <img src="images/student.png" id="studentPic"/>
+                        <div id="Sname">Danica Montano<br>Student ID:1538485</div>
+                    </div>
+                </a>
+                <div class="reload">
+                    <!-- ref: https://www.pngfind.com/mpng/imwbbJh_png-file-refresh-icon-svg-transparent-png/ -->
+                    <img src="images/icon.png" id="reload" onclick="reload()"/>   
+                </div>
+            </div>
+            
+            
+        </section>
+        <div class="topnav">
+            <a href="index.html" id="home" onclick="showHome()">HOME</a>
+            <a href="#" id="book" onclick="showBook()">BOOK</a>
+            <a href="file/Storyboard1(DanicaMontano_1538485).pdf" target="_blank">STORYBOARD 1</a>
+            <a href="file/Storyboard2(DanicaMontano_1538485).pdf" target="_blank">STORYBOARD 2</a>
+            <a href="file/Wireframes(DanicaMontano_1538485).pdf" target="_blank">WIREFRAMES</a>
+        </div>
+
+        <section id="Container2">
+            <div id="formContainer" style="display:none">
+                <div id="progress">
+                    <div id="progressBar"></div>
+                </div>
+                <div id="form1" style="display:inline" >
+                    <h2 id="tHeading">Booking Details</h2>
+                    <table id="bookingdetails">
+                        <tr>
+                            <td id="left">
+                                <label for="arrival">Arrival Date</label>
+                            </td>
+                            <td id="right">
+                                <input type="date" id="arrival" name="arrival" onclick="checkDate()">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="left">
+                                <label for="departure">Departure Date</label>
+                            </td>
+                            <td id="right">
+                                <input type="date" id="departure" name="departure" onclick="validDate()" ><br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="left">
+                                <label for="adults">Number of Adults</label>
+                            </td>
+                            <td id="right">
+                                <input type="number" id="adults" name="adults" value="1">
+                            </td>
+                            
+                        </tr>
+                        <tr>
+                            <td id="left">
+                                <label for="children">Number of Children</label>
+                            </td>
+                            <td id="right">
+                                <input type="number" id="children" name="children" value="0">
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td id="left">
+                                <label for="mobility">Do you require mobility Assistance?</label>
+                            </td>
+                            <td id="right">
+                                <input type="radio" checked id="yMobility" name="Mobility" value=" Yes">
+                                <label for="yMobility">Yes</label> 
+                                <input type="radio" id="nMobility" name="Mobility" value="No">
+                                <label for="nMobility">No</label>
+                            </td> 
+                        </tr>
+                    </table>
+                    <div class="row">
+                        <button class="next" onclick="showForm2()">Next</button>
+                    </div>
+                </div>
+                <div id="form2" style="display:none">
+                    <h2 id="tHeading">Accommodation Details</h2>
+                    <table id="accommodationDetails">
+                        <tr>
+                            <td id="left">
+                                <label for="room">Room Type</label>
+                            </td>
+                            <td id="right">
+                                <select id="room" name="room">
+                                    <option value="Standard Room">Standard Room</option>
+                                    <option value="Deluxe Room">Deluxe Room</option>
+                                    <option value="suite">Suite</option>
+                                </select>
+                            </td>
+                            
+                        </tr>
+                        <tr>
+                            <td id="left">
+                                <label for="cooking">Do you need cooking facilities?</label>
+                            </td>
+                            <td id="right">
+                                <input type="radio" checked id="yCooking" name="Cooking" value=" Yes">Yes
+                                <input type="radio" id="nCooking" name="Cooking" value="No">No
+                            </td>
+                           
+                        </tr>
+                        <tr>
+                            <td id="left">
+                                <label for="swimming">Do you need swimming pool access?</label>
+                            </td>
+                            <td id="right">
+                                <input type="radio" checked id="ySwimming" name="Swimming" value=" Yes">Yes
+                                <input type="radio" id="nSwimming" name="Swimming" value="No">No
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="left">
+                                <label for="rating">How would you rate your experience with our booking system so far?</label> 
+                            </td>
+                            <td id="right">
+                                1<input type="range" id="rating" name="rating" min="0" max="10" value="8">10
+                                
+                            </td>             
+                        </tr>    
+                    </table>  
+                    <div class="row">
+                        <button class="next" onclick="showForm3()">Next</button> 
+                        <button class="prev" onclick="showForm1()">Previous</button>
+                    </div>
+                </div>
+                <div id="form3" style="display:none">
+                    <h2 id="tHeading">Complementary Details</h2>
+                    <p id="des">You will be receiving a piha souvenir T-shirt with number at the back as a token for staying with us.
+                        Please select the color of the shirt that you prefer and your favorite number.</p>
+                    <table id="complementaryDetails">
+                        <tr>
+                            <td>                  
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="left">
+                                <label for="shirtColor">Colour  </label>
+                            </td>
+                            <td id="right">
+                                <input type="color" id="shirtColor" name="shirtColor" value="#1310e0"> 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="left">
+                                <label for="favNum">Favorite Number </label>
+                            </td>  
+                            <td if="right">
+                                <input type="number" id="favNum" name="favNum" value="0">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="left">
+                                <label for="maps">Do you need free maps and guides?</label>
+                            </td>
+                            <td id="right">
+                                <input type="radio" checked id="Ymaps" name="maps" value="Yes">Yes
+                                <input type="radio"  id="Nmaps" name="maps" value="No">No
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="left">
+                                <label for="excite">How excited are you for this trip?</label>
+                            </td>
+                            <td id="right">
+                                1<input type="range" checked id="excite" name="excite" min="0" max="10" value="8">10
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="row">
+                        <button class="next" onclick="showForm4()">Next</button>
+                        <button class="prev" onclick="showForm2()">Previous</button>
+                    </div>
+                </div>
+                <div id="form4" style="display:none">
+                    <h2 id="tHeading">Guest Information</h2>
+                    <table id="guestInformation">
+                        <tr>
+                            <td id="left">
+                                <label for="fname">First Name</label>
+                            </td>
+                            <td id="right">
+                                <input type="text" id="fname" name="fname" placeholder="Diana"><br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="left">
+                                <label for="lname">Last Name</label>
+                            </td>
+                            <td id="right">
+                                <input type="text" id="lname" name="lname" placeholder="Smith"><br>
+                            </td>
+                            
+                        </tr>
+                        <tr>
+                            <td id="left">
+                                <label for="email">Email Address</label>
+                            </td>
+                            <td id="right">
+                                <input type="email" id="email" name="email" size="35" placeholder="D.Smith@gmail.com"><br>
+                            </td>
+                            
+                        </tr>
+                        <tr>
+                            <td id="left">
+                                <label for="phone">Phone Number</label>
+                            </td>
+                            <td id="right">
+                                <input type="text" id="phone" name="phone" placeholder="02031546611"><br>
+                            </td>
+                            
+                        </tr>
+                        <tr>
+                            <td id="oneRow">
+                                <input type="checkbox" id="local" name="local"> I agree with the local native conservation initiative agreement.
+                            </td>
+                            
+                        </tr>
+                    </table>
+                    <div class="row">
+                        <button class="next" onclick="showSummary()">Next</button>
+                        <button class="prev" onclick="showForm3()">Previous</button>
+                    </div>
+                </div>
+    
+                <div id="summary" style="display:none">
+                    <div id="sum1">
+                        <h2 id="tHeading">Booking Details</h2>
+                        <table id="sumTable">
+                            <tr>
+                                <td id="sRow"> <p> Arrival: </p></td>
+                                <td id="sRow"><p id="arrivalfield">Null</p></td>
+                            </tr>
+                            <tr>
+                                <td id="sRow"><p> Departure: </p></td>
+                                <td id="sRow"><p id="departurefield">Null</p></td> 
+                            </tr>
+                            <tr>
+                                <td id="sRow"><p>Number of Adults: </p></td>
+                                <td id="sRow"><p id="adultsfield">Null</p></td>
+                             </tr>
+                            <tr>
+                                <td id="sRow"><p>Number of Children: </p></td>
+                                <td id="sRow"><p id="childrenfield">Null</p></td>
+                            </tr>
+                            <tr>
+                                <td id="sRow"><p>Mobility Assistance Required: </p></td>
+                                <td id="sRow"><p id="mobilityfield">Null</p></td>
+                            </tr>
+                        </table>
+                        <h2 id="tHeading">Accommodation Details</h2>
+                        <table id="sumTable">
+                            <tr>
+                                <td id="sRow"><p> Room Type: </p></td>
+                                <td id="sRow"> <p id="roomfield">Null</p></td>
+                            </tr>
+                            <tr>
+                                <td id="sRow"><p> Cooking Facilities Required: </p></td>
+                                <td id="sRow"><p id="cookingfield">Null</p></td>
+                            </tr>
+                            <tr>
+                                <td id="sRow"><p>Swimming Pool Access: </p></td>
+                                <td id="sRow"><p id="swimmingfield">Null</p></td>
+                            </tr>
+                            <tr>
+                                <td id="sRow"><p>Rated Our Booking System: </p> </td>
+                                <td id="sRow"><p id="ratefield">Null</p> </td> 
+                            </tr>
+                        </table>  
+                   
+                    </div>
+                    
+                    <div id="sum2">
+                        <h2 id="tHeading">Complementary Details</h2>  
+                        <table id="sumTable">
+                            <tr>
+                                <td id="sRow"><p> T-shirt Colour: </p> </td> 
+                                <td id="sRow"><p id="colorfield">Null</p></td>
+                            </tr>
+                            <tr>
+                                <td id="sRow"><p> Favorite Number: </p></td>
+                                <td id="sRow"><p id="numfield">Null</p></td>
+                            </tr>      
+                            <tr>
+                                <td id="sRow"><p>Do you need free maps and guides? </p></td>
+                                <td id="sRow"><p id="mapsfield">Null</p></td>
+                            </tr> 
+                            <tr>
+                                <td id="sRow"><p>How excited are you for this trip? </p></td>
+                                <td id="sRow"><p id="excitefield">Null</p></td>
+                            </tr>       
+                    </table>
+                    <h2 id="tHeading">Guest Information</h2>
+                    <table id="sumTable">
+                        <tr>
+                            <td id="sRow"><p> First Name: </p></td>  
+                            <td id="sRow"><p id="fNameField">Null</p></td>
+                        </tr>
+                        <tr>
+                            <td id="sRow"><p> Last Name: </p></td>
+                            <td id="sRow"><p id="lNameField">Null</p></td>
+                        </tr>
+                        <tr>
+                            <td id="sRow"><p>Email Address: </p></td>
+                            <td id="sRow"><p id="emailfield">Null</p></td>
+                        </tr>
+                        <tr>
+                            <td id="sRow"><p>Phone Number: </p></td>
+                            <td id="sRow"><p id="phonefield">Null</p></td>
+                        </tr>
+                        <tr>
+                            <td id="sRow"><p>I agree with the local native conservation initiative agreement: </p></td>
+                            <td id="sRow"><p id="localfield">Null</p></td>  
+                        </tr>
+                    </table>
+                    </div>
+                    
+                    <div class="row">
+                        <button class="next" onclick="confirm()">Finish</button>
+                        <button class="prev" onclick="showForm4()">Previous</button>
+                    </div>
+                </div>     
+                <div id="confirmation" style="display:none"></div>   
+            </div>
+            
+            <div id="Homepage" style="display:flex">
+                <div class="slide"></div>
+                <div class="TextContent">
+                    <h1 id="tHeading"> Welcome to Piha!</h1><br>
+                    <p>Piha is New Zealand's most famous surf beach. Situated on the west 
+                        coast of the North Island, 40 kms from the city of Auckland, 
+                        this black iron-sand beach has a reputation for awesome surf
+                         which rolls in over the Tasman Sea. </p><br>
+                    <p>Piha Homestay, a beachfront accommodation offers warm and comfy rooms for 
+                         visitors who would like to experience piha overnight. 
+                         We pride ourselves for the variety of rooms with breathtaking view and 
+                         exceptional service.
+                    </p>
+
+                </div>
+            </div>
+            
+        </section>
+        <section id="Container3">
+            <div id="Ad2_Container">
+                 <!--ref: https://www.pngwing.com/en/free-png-ypile -->
+                <img src="images/info.png" id="info" onclick="information()"/>
+                <div class="Text Text1">
+                    <h1>Spinning</h1>
+                </div>
+                <div class="Text Text2">
+                    <h1>Car Wheels</h1>
+                </div>
+            
+                <a class="LearnMoreButton" href="https://www.toyota.co.nz/new-car/hilux/" target="_blank">LEARN MORE</a>
+         
+                <div class="carContainer">
+                    <!-- ref: https://www.html5-banner-ads.com/blog/spinning-car-wheels-animation-tweenmax/ -->
+                    <img src="images/car.png" id="car">
+                    <div class="rim1">
+                        <img src="images/rim.png" id="rim">
+                        <!-- ref: https://www.html5-banner-ads.com/blog/spinning-car-wheels-animation-tweenmax/ -->
+                    </div>
+                    <div class="rim2">
+                        <img src="images/rim.png" id="rim2">
+                        <!-- ref: https://www.html5-banner-ads.com/blog/spinning-car-wheels-animation-tweenmax/ -->
+                    </div>
+                </div>
+                <div class="studentContainer">
+                    <div id="Sname2">Danica Montano<br>Student ID:1538485</div>
+                </div>
+                <div class="replay">
+                    <!-- ref: https://www.pngwing.com/en/search?q=replay -->
+                    <img src="images/replay.png" onclick="Again()" id="replayIcon"/>
+                </div>
+
+            </div>
+           
+        </section>
+<!--         
+        idea references: https://www.youtube.com/watch?v=MMNEEdGa5eE&ab_channel=OnlineTutorials
+                         https://www.youtube.com/watch?v=f0qX-lkk8Y8&ab_channel=CodingArtist
+                         https://www.html5-banner-ads.com/blog/spinning-car-wheels-animation-tweenmax/
+                         https://www.youtube.com/watch?v=YszONjKpgg4&ab_channel=WebDevSimplified -->
+                                
+        
+    </body>
+</html>
