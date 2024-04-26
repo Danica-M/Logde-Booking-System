@@ -13,5 +13,5 @@ This is a school project for my Internet & Website Development. Below are the th
 ###
 
 <div align="center">
-  <img height="400" src="images/ss.png"/>
+  <img height="400" src="/Project1/images/ss.png"/>
 </div>
